@@ -9,18 +9,16 @@ it("renders without crashing", () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-describe("testing api data", () => {
-  it("should load user data", () => {
-    return api.getDataList().then(data => {
-      expect(data).toBeDefined();
-    });
+test("should return value form API - paramater is passed", () => {
+  expect.assertions(1);
+  return api.getDataList("?id=100").then(res => {
+    expect(res.data[0].albumId).toEqual(2);
   });
 });
 
-describe("testing api data", () => {
-  it("should load user data", () => {
-    return api.getDataList("?albumId=1").then(data => {
-      expect(data).toBeDefined();
-    });
+test("should return value for API - empty parameter", () => {
+  expect.assertions(1);
+  return api.getDataList().then(res => {
+    expect(res.data[0].id).toEqual(1);
   });
 });
