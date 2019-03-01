@@ -1,45 +1,49 @@
 * {
-    transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 ul {
-    width: 100vh;
-    height: 400px;
-    overflow: auto;
+  width: 100vh;
+  height: 400px;
+  overflow: auto;
 }
 
 li {
-    text-align: center;
+  text-align: center;
 }
 
 .grid-mar {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.albumSelector {
+  cursor: pointer;
 }
 
 .wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
 }
 
 #content {
-    width: 100%;
-    padding: 20px;
-    min-height: 100vh;
-    transition: all 0.3s;
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 100vh;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+  margin-left: -250px;
 }
 
 .scrollable {
-    overflow: hidden;
-    height: 100vh;
+  overflow: hidden;
+  height: 100vh;
 }
