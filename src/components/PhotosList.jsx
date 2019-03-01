@@ -25,7 +25,7 @@ class PhotosList extends Component {
         <h1>
           {this.props.photoData.length === 0
             ? "Select Album form the side bar to view photos"
-            : ""}
+            : `Slected Album - ${this.props.albumId}`}
         </h1>
         <div className="row">
           {this.props.photoData.map(x => this.imageGridGenerator(x))}

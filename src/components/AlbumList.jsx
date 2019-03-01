@@ -6,7 +6,8 @@ import PhotosList from "./PhotosList";
 class AlbumList extends Component {
   state = {
     imagelist: [],
-    uniqueAlbumList: []
+    uniqueAlbumList: [],
+    selectedAlbum: ""
   };
 
   componentDidMount = () => {
@@ -41,9 +42,9 @@ class AlbumList extends Component {
   };
 
   albumHandler = event => {
-    console.log(event.target.id);
-    api.getDataList(`?albumId=${event.target.id}`).then(list => {
-      this.setState({ imagelist: list.data });
+    const albumID = event.target.id;
+    api.getDataList(`?albumId=${albumID}`).then(list => {
+      this.setState({ imagelist: list.data, selectedAlbum: albumID });
     });
   };
 
@@ -62,7 +63,10 @@ class AlbumList extends Component {
             </ul>
           </nav>
         </div>
-        <PhotosList photoData={this.state.imagelist} />
+        <PhotosList
+          photoData={this.state.imagelist}
+          albumId={this.state.selectedAlbum}
+        />
       </div>
     );
   }

@@ -20,6 +20,10 @@ li {
   cursor: pointer;
 }
 
+.albumSelector:hover {
+  color: red;
+}
+
 .wrapper {
   display: flex;
   width: 100%;
