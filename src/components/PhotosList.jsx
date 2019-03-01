@@ -27,7 +27,7 @@ class PhotosList extends Component {
   imagePopupLoader = e => {
     const id = e.target.id;
     const url = this.props.photoData.filter(x => x.id == id);
-    this.setState({ largeTest: url[0] }, function() {
+    this.setState({ largeTest: url[0].url }, function() {
       console.log(this.state.largeTest);
     });
     this.popupToggle();
