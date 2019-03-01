@@ -27,7 +27,13 @@ class AlbumList extends Component {
   renderAlbumList = (x, y) => {
     return (
       <li key={y}>
-        <span key={y} id={x} onClick={this.albumHandler} id={x}>
+        <span
+          key={y}
+          className="albumSelector"
+          id={x}
+          onClick={this.albumHandler}
+          id={x}
+        >
           Album - {x}
         </span>
       </li>
