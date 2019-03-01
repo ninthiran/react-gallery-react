@@ -19,7 +19,7 @@ class PhotosList extends Component {
           alt=""
           onClick={this.imagePopupLoader}
         />
-        <span>{x.title}</span>
+        <p>{x.title}</p>
       </div>
     );
   };
