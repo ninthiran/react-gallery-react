@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import GridBox from "./GribBox";
+import PopupLayout from "./PopupLayout";
 
 class PhotosList extends Component {
   constructor(props) {
@@ -50,6 +50,12 @@ class PhotosList extends Component {
         <div className="row">
           {this.props.photoData.map(x => this.imageGridGenerator(x))}
         </div>
+        {this.state.showPopUp ? (
+          <PopupLayout
+            popupClose={this.popupToggle}
+            selectedImage={this.state.largeTest}
+          />
+        ) : null}
       </div>
     );
   }
