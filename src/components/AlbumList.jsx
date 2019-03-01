@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import api from "../Api/api";
 // import GridBox from "./GribBox";
+import PhotosList from "./PhotosList";
 
 class AlbumList extends Component {
   state = {
@@ -33,6 +34,13 @@ class AlbumList extends Component {
     );
   };
 
+  albumHandler = event => {
+    console.log(event.target.id);
+    api.getDataList(`?albumId=${event.target.id}`).then(list => {
+      this.setState({ imagelist: list.data });
+    });
+  };
+
   render() {
     return (
       <div className="wrapper">
@@ -48,6 +56,7 @@ class AlbumList extends Component {
             </ul>
           </nav>
         </div>
+        <PhotosList photoData={this.state.imagelist} />
       </div>
     );
   }
